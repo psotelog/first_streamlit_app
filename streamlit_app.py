@@ -34,3 +34,7 @@ streamlit.dataframe (my_fruit_list)
   
   fruits_to_show = my_fruit_list.loc[fruits_selected]
   
+  #visualizamos el grupo de valores seleccionados
+  streamlit.dataframe (fruits_to_show)
+  
+  
