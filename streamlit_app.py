@@ -19,15 +19,12 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 # streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 
 # Si  queremos que por defecto en la lista de selección aparezcan ya  varias frutas seleccionadas: 
-streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries'])
+#streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries'])
 
 # Visualizamos el dataframe con los datos del fichero
-streamlit.dataframe (my_fruit_list)
+#streamlit.dataframe (my_fruit_list)
 
 # Quermeos msotrar las frutas que ha seleccionado el cliente en su propia tabla
-
-  
-
   # creamos un objeto que contenga  el resultado seleccionado
 fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries'])
   
