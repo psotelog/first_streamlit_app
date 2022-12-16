@@ -23,3 +23,14 @@ streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado',
 
 # Visualizamos el dataframe con los datos del fichero
 streamlit.dataframe (my_fruit_list)
+
+# Quermeos msotrar las frutas que ha seleccionado el cliente en su propia tabla
+
+  # creamos un objeto que contenga  el resultado seleccionado
+  fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries'])
+  
+  # generamos  un grupo de registros y columnas  sobre el DF mediante .loc
+  # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html
+  
+  fruits_to_show = my_fruit_list.loc[fruits_selected]
+  
