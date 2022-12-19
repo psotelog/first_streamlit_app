@@ -64,4 +64,4 @@ streamlit.dataframe(my_data_rows)
 # Nueva sección para tener una segunda caja de texto para  entrar datos
 streamlit.header('Fruityvice Fruit Advice!')
 add_my_fruit = streamlit.text_input('What fruit would you like to add?')
-streamlit.write('The user entered ', add_my_fruit)
+streamlit.write('Thanks for adding ', add_my_fruit)
