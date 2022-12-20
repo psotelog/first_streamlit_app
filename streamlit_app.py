@@ -40,6 +40,13 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
   
   #visualizamos el grupo de valores seleccionados
 streamlit.dataframe (fruits_to_show)
+
+def get_fruityvice_data(this_fruit_choice):
+   #le pasammos por parámetro el nombre de la fruta que queremos mostrar
+    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+    #cogemos el json de la respuesta y lo normalizamos
+    fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+    return fruityvice_normalized
   
 # Nueva sección para mostrar la respuesta de la API fruityvice
 streamlit.header('Fruityvice Fruit Advice!')
@@ -48,12 +55,10 @@ try:
   if not fruit_choice:
     streamlit.error("Please select a fruit to get information.")
   else:
-    #le pasammos por parámetro el nombre de la fruta que queremos mostrar
-    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-    #cogemos el json de la respuesta y lo normalizamos
-    fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+    back_from_function = get_fruityvice_data(fruit_choice)
     # mostramos el resultado normalizado en  un dataframe
-    streamlit.dataframe(fruityvice_normalized)
+    streamlit.dataframe(bck_from_frunction)
+    
 except URLerror as e:
   streamlit.error()
   
