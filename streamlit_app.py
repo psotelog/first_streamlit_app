@@ -59,7 +59,7 @@ try:
     # mostramos el resultado normalizado en  un dataframe
     streamlit.dataframe(bck_from_frunction)
     
-except URLerror as e:
+except URLError as e:
   streamlit.error()
   
 #fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
