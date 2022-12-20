@@ -77,7 +77,7 @@ except URLError as e:
 # mostramos el resultado normalizado en  un dataframe
 #streamlit.dataframe(fruityvice_normalized)
 
-streamlit.stop()
+#streamlit.stop()
 
 streamlit.header("The fruit load list contains:")
 
